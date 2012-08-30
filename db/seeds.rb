@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+pools = Pool.create([
+  { :name => 'Centennial', :city => 'Christchurch' },
+  { :name => 'Graham Condon', :city => 'Christchurch' },
+  { :name => 'Jellie Park', :city => 'Christchurch' },
+  { :name => 'Ocean Spa', :city => 'Napier' },
+  { :name => 'Pioneer', :city => 'Christchurch' },
+  { :name => 'QEII', :city => 'Christchurch' },
+  { :name => 'Wharenui', :city => 'Christchurch' }
+])

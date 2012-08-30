@@ -18,7 +18,7 @@ class PoolsControllerTest < ActionController::TestCase
 
   test "should create pool" do
     assert_difference('Pool.count') do
-      post :create, :pool => { :name => @pool.name }
+      post :create, :pool => { :name => @pool.name, :city => @pool.city }
     end
 
     assert_redirected_to pool_path(assigns(:pool))
@@ -35,7 +35,7 @@ class PoolsControllerTest < ActionController::TestCase
   end
 
   test "should update pool" do
-    put :update, :id => @pool, :pool => { :name => @pool.name }
+    put :update, :id => @pool, :pool => { :name => @pool.name, :city => @pool.city }
     assert_redirected_to pool_path(assigns(:pool))
   end
 
