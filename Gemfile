@@ -6,6 +6,8 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'twitter-bootstrap-rails'
+gem 'kaminari'
 
 
 # Gems used only for assets and not required
