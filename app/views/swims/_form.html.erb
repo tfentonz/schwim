@@ -1,4 +1,4 @@
-<%= form_for(@swim) do |f| %>
+<%= form_for(@swim, :html => { :class => "well form-horizontal" }) do |f| %>
   <% if @swim.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@swim.errors.count, "error") %> prohibited this swim from being saved:</h2>
@@ -10,32 +10,46 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :swam_on %><br />
-    <%= f.date_select :swam_on %>
-  </div>
-  <div class="field">
-    <%= f.label :pool_id %><br />
-    <%= f.number_field :pool_id %>
-  </div>
-  <div class="field">
-    <%= f.label :program %><br />
-    <%= f.text_area :program %>
-  </div>
-  <div class="field">
-    <%= f.label :kilometers %><br />
-    <%= f.text_field :kilometers %>
-  </div>
-  <div class="field">
-    <%= f.label :concession_card %><br />
-    <%= f.number_field :concession_card %>
-  </div>
-  <div class="field">
-    <%= f.label :purchase %><br />
-    <%= f.text_field :purchase %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :swam_on, "Date", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :swam_on, :class => "input-small", :maxlength => 10, :autofocus => true %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :pool_id, "Pool", :class => "control-label" %>
+      <div class="controls">
+        <%= f.number_field :pool_id %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :program, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :program, :rows => 5 %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :kilometers, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :kilometers, :class => "input-mini" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :concession_card, :class => "control-label" %>
+      <div class="controls">
+        <%= f.number_field :concession_card, :class => "input-mini" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :purchase, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :purchase %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= link_to "Cancel", swims_path, :class => "btn" %>
+      <%= f.submit :name => nil, :class => "btn btn-primary" %>
+    </div>
+  </fieldset>
 <% end %>
