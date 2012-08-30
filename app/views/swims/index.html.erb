@@ -1,0 +1,33 @@
+<h1>Listing swims</h1>
+
+<table>
+  <tr>
+    <th>Swam on</th>
+    <th>Pool</th>
+    <th>Program</th>
+    <th>Kilometers</th>
+    <th>Concession card</th>
+    <th>Purchase</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @swims.each do |swim| %>
+  <tr>
+    <td><%= swim.swam_on %></td>
+    <td><%= swim.pool_id %></td>
+    <td><%= swim.program %></td>
+    <td><%= swim.kilometers %></td>
+    <td><%= swim.concession_card %></td>
+    <td><%= swim.purchase %></td>
+    <td><%= link_to 'Show', swim %></td>
+    <td><%= link_to 'Edit', edit_swim_path(swim) %></td>
+    <td><%= link_to 'Destroy', swim, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Swim', new_swim_path %>

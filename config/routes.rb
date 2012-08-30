@@ -1,4 +1,10 @@
 Schwim::Application.routes.draw do
+  resources :pools
+
+  resources :swims
+
+  root :to => 'swims#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

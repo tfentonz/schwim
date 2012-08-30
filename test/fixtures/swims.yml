@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  swam_on: 2012-08-31
+  pool_id: 1
+  program: MyText
+  kilometers: 9.99
+  concession_card: 1
+  purchase: 9.99
+
+two:
+  swam_on: 2012-08-31
+  pool_id: 1
+  program: MyText
+  kilometers: 9.99
+  concession_card: 1
+  purchase: 9.99

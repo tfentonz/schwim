@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Swam on:</b>
+  <%= @swim.swam_on %>
+</p>
+
+<p>
+  <b>Pool:</b>
+  <%= @swim.pool_id %>
+</p>
+
+<p>
+  <b>Program:</b>
+  <%= @swim.program %>
+</p>
+
+<p>
+  <b>Kilometers:</b>
+  <%= @swim.kilometers %>
+</p>
+
+<p>
+  <b>Concession card:</b>
+  <%= @swim.concession_card %>
+</p>
+
+<p>
+  <b>Purchase:</b>
+  <%= @swim.purchase %>
+</p>
+
+
+<%= link_to 'Edit', edit_swim_path(@swim) %> |
+<%= link_to 'Back', swims_path %>
