@@ -3,6 +3,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>City</th>
       <th>Actions</th>
@@ -11,6 +12,7 @@
   <tbody>
 <% @pools.each do |pool| %>
     <tr>
+      <td><%= pool.id %></td>
       <td><%= pool.name %></td>
       <td><%= pool.city %></td>
       <td>

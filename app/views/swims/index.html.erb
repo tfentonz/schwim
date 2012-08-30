@@ -3,6 +3,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Date</th>
       <th>Pool</th>
       <th>Kilometers</th>
@@ -12,6 +13,7 @@
   <tbody>
 <% @swims.each do |swim| %>
     <tr>
+      <td><%= swim.id %></td>
       <td><%= swim.swam_on.strftime('%d %b %Y') %></td>
       <td><%= swim.pool.name %></td>
       <td><%= number_with_precision(swim.kilometers, :precision => 3) %></td>
