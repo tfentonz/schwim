@@ -13,12 +13,11 @@
   <tbody>
 <% @swims.each do |swim| %>
     <tr>
-      <td><%= swim.id %></td>
-      <td><%= swim.swam_on.strftime('%d %b %Y') %></td>
+      <td><%= link_to swim.id, swim %></td>
+      <td><%= swim.swam_on.strftime('%-d %b %Y') %></td>
       <td><%= swim.pool.name %></td>
       <td><%= number_with_precision(swim.kilometers, :precision => 3) %></td>
       <td>
-        <%= link_to 'Show', swim, :class => 'btn btn-mini' %>
         <%= link_to 'Edit', edit_swim_path(swim), :class => 'btn btn-mini' %>
         <%= link_to 'Destroy', swim, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
       </td>

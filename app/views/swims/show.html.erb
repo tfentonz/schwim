@@ -1,35 +1,37 @@
-<p id="notice"><%= notice %></p>
+<h1>Swim</h1>
 
-<p>
-  <b>Swam on:</b>
-  <%= @swim.swam_on %>
-</p>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><b>Date</b></td>
+      <td><%= @swim.swam_on.strftime('%-d %b %Y') %></td>
+    </tr>
+    <tr>
+      <td><b>Pool</b></td>
+      <td><%= @swim.pool.name %></td>
+    </tr>
+    <tr>
+      <td><b>Program</b></td>
+      <td><%= simple_format(@swim.program) %></td>
+    </tr>
+    <tr>
+      <td><b>Kilometers</b></td>
+      <td><%= number_with_precision(@swim.kilometers, :precision => 3) %></td>
+    </tr>
+<% if @swim.concession_card %>
+    <tr>
+      <td><b>Concession card</b></td>
+      <td><%= @swim.concession_card %></td>
+    </tr>
+<% end %>
+<% if @swim.purchase %>
+    <tr>
+      <td><b>Purchase</b></td>
+      <td><%= number_to_currency(@swim.purchase) %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
 
-<p>
-  <b>Pool:</b>
-  <%= @swim.pool_id %>
-</p>
-
-<p>
-  <b>Program:</b>
-  <%= @swim.program %>
-</p>
-
-<p>
-  <b>Kilometers:</b>
-  <%= @swim.kilometers %>
-</p>
-
-<p>
-  <b>Concession card:</b>
-  <%= @swim.concession_card %>
-</p>
-
-<p>
-  <b>Purchase:</b>
-  <%= @swim.purchase %>
-</p>
-
-
-<%= link_to 'Edit', edit_swim_path(@swim) %> |
-<%= link_to 'Back', swims_path %>
+<%= link_to 'Edit', edit_swim_path(@swim), :class => 'btn btn-primary' %>
+<%= link_to 'Back', swims_path, :class => 'btn' %>

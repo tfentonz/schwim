@@ -1,7 +1,7 @@
 <%= form_for(@swim, :html => { :class => "well form-horizontal" }) do |f| %>
   <% if @swim.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@swim.errors.count, "error") %> prohibited this swim from being saved:</h2>
+    <div id="error_explanation" class="alert alert-error">
+      <h4><%= pluralize(@swim.errors.count, "error") %> prohibited this swim from being saved:</h4>
 
       <ul>
       <% @swim.errors.full_messages.each do |msg| %>
@@ -12,15 +12,25 @@
   <% end %>
   <fieldset>
     <div class="control-group">
+      <%# f.label :swam_on, "Date", :class => "control-label" %>
+      <div class="controls">
+        <%# f.date_select :swam_on, :end_year => Time.now.year,
+                          :order => [:day, :month, :year] %>
+      </div>
+    </div>
+    <div class="control-group">
       <%= f.label :swam_on, "Date", :class => "control-label" %>
       <div class="controls">
-        <%= f.text_field :swam_on, :class => "input-small", :maxlength => 10, :autofocus => true %>
+        <%= f.text_field :swam_on, :class => "input-small", :maxlength => 10,
+                         :value => @swim.swam_on.strftime('%d/%m/%Y'),
+                         :autofocus => true %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :pool_id, "Pool", :class => "control-label" %>
       <div class="controls">
-        <%= f.number_field :pool_id %>
+        <%= f.collection_select :pool_id, Pool.all, :id, :name,
+                                :include_blank => true %>
       </div>
     </div>
     <div class="control-group">
@@ -32,19 +42,25 @@
     <div class="control-group">
       <%= f.label :kilometers, :class => "control-label" %>
       <div class="controls">
-        <%= f.text_field :kilometers, :class => "input-mini" %>
+        <%= f.text_field :kilometers, :class => "input-mini",
+                         :placeholder => "0.000" %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :concession_card, :class => "control-label" %>
       <div class="controls">
-        <%= f.number_field :concession_card, :class => "input-mini" %>
+        <%= f.number_field :concession_card, :min => 0, :max => 20,
+                           :class => "input-mini" %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :purchase, :class => "control-label" %>
       <div class="controls">
-        <%= f.text_field :purchase %>
+        <div class="input-prepend">
+          <span class="add-on">$</span>
+          <%= f.text_field :purchase, :class => "input-small",
+                           :maxlength => 6, :placeholder => "0.00" %>
+        </div>
       </div>
     </div>
     <div class="form-actions">
