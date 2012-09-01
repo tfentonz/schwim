@@ -29,7 +29,7 @@
   <tbody>
 <% @pool.swims.each do |swim| %>
     <tr>
-      <td><%= swim.swam_on.strftime('%A %-d %b %Y') %></td>
+      <td><%= swim.swam_on.strftime('%a %-d %b %Y') %></td>
       <td><%= number_with_precision(swim.kilometers, :precision => 3) %></td>
     </tr>
 <% end %>

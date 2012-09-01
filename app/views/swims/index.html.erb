@@ -14,7 +14,7 @@
 <% @swims.each do |swim| %>
     <tr>
       <td><%= link_to swim.id, swim %></td>
-      <td><%= swim.swam_on.strftime('%-d %b %Y') %></td>
+      <td><%= swim.swam_on.strftime('%a %-d %b %Y') %></td>
       <td><%= swim.pool.name %></td>
       <td><%= number_with_precision(swim.kilometers, :precision => 3) %></td>
       <td>
