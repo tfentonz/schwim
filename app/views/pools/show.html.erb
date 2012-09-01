@@ -1,15 +1,41 @@
-<p id="notice"><%= notice %></p>
+<h1>Pool</h1>
 
-<p>
-  <b>Name:</b>
-  <%= @pool.name %>
-</p>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><b>Name</b></td>
+      <td><%= @pool.name %></td>
+    </tr>
+    <tr>
+      <td><b>City</b></td>
+      <td><%= @pool.city %></td>
+    </tr>
+    <tr>
+      <td><b>Total swims</b></td>
+      <td><%= @pool.swims.count %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <b>City:</b>
-  <%= @pool.city %>
-</p>
+<h2>Swim history</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Kilometers</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @pool.swims.each do |swim| %>
+    <tr>
+      <td><%= swim.swam_on.strftime('%A %-d %b %Y') %></td>
+      <td><%= number_with_precision(swim.kilometers, :precision => 3) %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
 
 
-<%= link_to 'Edit', edit_pool_path(@pool) %> |
-<%= link_to 'Back', pools_path %>
+<%= link_to 'Edit', edit_pool_path(@pool), :class => 'btn btn-primary' %>
+<%= link_to 'Back', pools_path, :class => 'btn' %>

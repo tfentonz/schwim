@@ -1,7 +1,7 @@
 class Pool < ActiveRecord::Base
   attr_accessible :city, :name
 
-  belongs_to :swim
+  has_many :swims
 
   validates :name, :presence => true
   validates :city, :presence => true

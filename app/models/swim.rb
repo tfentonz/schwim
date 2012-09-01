@@ -1,9 +1,12 @@
 class Swim < ActiveRecord::Base
-  attr_accessible :concession_card, :kilometers, :pool_id, :program, :purchase, :swam_on
+  attr_accessible :concession_card, :kilometers, :pool_id, :program, :purchase,
+                  :swam_on
 
-  has_one :pool
+  belongs_to :pool
 
-  validates :swam_on, :pool_id, :kilometers, :presence => true
+  validates :swam_on, :presence => true
+  validates :pool_id, :kilometers, :presence => true
   validates :kilometers, :numericality => true
-  validates :concession_card, :numericality => { :only_integer => true }
+  validates :concession_card, :numericality => { :only_integer => true },
+            :allow_nil => true
 end

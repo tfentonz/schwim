@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,10 +14,10 @@
 ActiveRecord::Schema.define(:version => 20120830120201) do
 
   create_table "pools", :force => true do |t|
-    t.string   "name"
-    t.string   "city"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",       :limit => 35, :null => false
+    t.string   "city",       :limit => 35, :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "swims", :force => true do |t|
