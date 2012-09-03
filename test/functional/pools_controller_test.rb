@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PoolsControllerTest < ActionController::TestCase
   setup do
-    @pool = pools(:one)
+    @pool = pools(:centennial)
   end
 
   test "should get index" do
