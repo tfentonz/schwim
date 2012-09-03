@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  swam_on: 2012-08-31
+  swam_on: 2012-09-01
   pool: centennial
   program: MyText
   kilometers: 1.000
@@ -9,9 +9,17 @@ one:
   purchase: 5.00
 
 two:
-  swam_on: 2012-08-31
+  swam_on: 2012-09-02
   pool: centennial
   program: MyText
-  kilometers: 2.000
+  kilometers: 1.500
   concession_card: 2
-  purchase: 5.00
+  purchase: 0.00
+
+three:
+  swam_on: 2012-09-03
+  pool: jellie_park
+  program: MyText
+  kilometers: 2.000
+  concession_card: 3
+  purchase: 0.00
