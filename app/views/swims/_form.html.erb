@@ -43,6 +43,7 @@
       <%= f.label :kilometers, :class => "control-label" %>
       <div class="controls">
         <%= f.text_field :kilometers, :class => "input-mini",
+                         :value => number_with_precision(@swim.kilometers, :precision => 3),
                          :placeholder => "0.000" %>
       </div>
     </div>
@@ -58,8 +59,9 @@
       <div class="controls">
         <div class="input-prepend">
           <span class="add-on">$</span>
-          <%= f.text_field :purchase, :class => "input-small",
-                           :maxlength => 6, :placeholder => "0.00" %>
+          <%= f.text_field :purchase, :class => "input-small", :maxlength => 6,
+                           :value => number_with_precision(@swim.purchase, :precision => 2),
+                           :placeholder => "0.00" %>
         </div>
       </div>
     </div>
