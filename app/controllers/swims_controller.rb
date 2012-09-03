@@ -2,7 +2,7 @@ class SwimsController < ApplicationController
   # GET /swims
   # GET /swims.json
   def index
-    @swims = Swim.all
+    @swims = Swim.page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

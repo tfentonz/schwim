@@ -2,7 +2,7 @@ class PoolsController < ApplicationController
   # GET /pools
   # GET /pools.json
   def index
-    @pools = Pool.all
+    @pools = Pool.page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
