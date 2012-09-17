@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-centennial:
-  name: Centennial
-  city: Christchurch
-
-jellie_park:
-  name: Jellie Park
-  city: Christchurch
